@@ -1,5 +1,6 @@
 <html>
 <head>
+	<title>Liste Film WildCine</title>
 	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 	<link rel="stylesheet" href="ChartreGraphique.css" media="screen" type="text/css" charset=UTF-8 />
 </head>
@@ -48,7 +49,7 @@ while($donnees = mysqli_fetch_array($requete))
 <td><?php echo $donnees['NomGenre']?></td>
 <td><center><?php echo $donnees['NomPaysProd']?></center></td>
 <td><center><?php echo $donnees['NomLangueVO']?></center></td>
-<td><form action="SupAd.php" method="POST">
+<td><form action="SupFilm.php" method="POST">
 	<input type="hidden" name="id" value="<?php echo $donnees['CodeFilm']?>"/>
 	<input type="submit" name="valider" class="delete" value="Supprimer" />
 	</form>
