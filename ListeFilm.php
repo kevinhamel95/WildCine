@@ -1,7 +1,7 @@
 <html>
 <head>
 	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
-	<link rel="stylesheet" href="Style.css" media="screen" type="text/css" charset=UTF-8 />
+	<link rel="stylesheet" href="ChartreGraphique.css" media="screen" type="text/css" charset=UTF-8 />
 </head>
 <?php
 include 'conect.php';
@@ -10,7 +10,7 @@ include 'conect.php';
  
  <div id="menu">
  
- <a href="Principal.php">Accueuil</a><br>
+ <a href="Principal.php"><img src="WildCine.png" align=right></a><br>
  
  </div>
  
@@ -20,17 +20,17 @@ include 'conect.php';
  <br><br>
             <thead>
             <tr class="titre_horizon_classique">
-				<th colspan="1"><h3>Supprimer</h3></th>
                 <th colspan="6"><h3>Films</h3></th>
+				<th colspan="1"><h3>Supprimer</h3></th>
             </tr>
             <tr class="titre_horizon_classique">
-                <th> </th>
                 <th>Nom film</th>
                 <th>Synopsis</th>
                 <th>Année de sortie en salle</th>
                 <th>Genre</th>
                 <th>Pays de Production</th>
 				<th>Langue en version originale</th>
+				<th> </th>
             </tr>
             </thead>
 <tbody>
@@ -41,10 +41,6 @@ while($donnees = mysqli_fetch_array($requete))
 {
 ?>
 <tr>
-<td><form action="SupAd.php" method="POST">
-	<input type="hidden" name="id" value="<?php echo $donnees['CodeFilm']?>"/>
-	<input type="submit" name="valider" class="delete" value="Supprimer" />
-	</form>
 </td>
 <td><?php echo $donnees['NomFilm'] ?></td>
 <td><?php echo $donnees['Synopsis']?></td>
@@ -52,6 +48,10 @@ while($donnees = mysqli_fetch_array($requete))
 <td><?php echo $donnees['NomGenre']?></td>
 <td><center><?php echo $donnees['NomPaysProd']?></center></td>
 <td><center><?php echo $donnees['NomLangueVO']?></center></td>
+<td><form action="SupAd.php" method="POST">
+	<input type="hidden" name="id" value="<?php echo $donnees['CodeFilm']?>"/>
+	<input type="submit" name="valider" class="delete" value="Supprimer" />
+	</form>
 <?php
 }
                 if(isset($_GET['erreur']))
