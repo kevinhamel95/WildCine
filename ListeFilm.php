@@ -43,7 +43,7 @@ include 'conect.php';
             </thead>
 <tbody>
 <?php
-$sql="select `CodeFilm`,`NomFilm`,`Synopsis`,`AnnéeSortie`,`NomGenre`,`NomLangueVO`, `NomPaysProd` from film, genre, languevo, paysprod where film.CodeGenre = genre.CodeGenre and film.CodePaysProd = paysprod.CodePaysProd and film.CodeLangueVO = languevo.CodeLangueVO";
+$sql="select `CodeFilm`,`NomFilm`,`Synopsis`,`AnneeSortie`,`NomGenre`,`NomLangueVO`, `NomPaysProd` from film, genre, languevo, paysprod where film.CodeGenre = genre.CodeGenre and film.CodePaysProd = paysprod.CodePaysProd and film.CodeLangueVO = languevo.CodeLangueVO";
 $requete = mysqli_query($db,$sql);
 while($donnees = mysqli_fetch_array($requete)) 
 {
@@ -52,7 +52,7 @@ while($donnees = mysqli_fetch_array($requete))
 </td>
 <td><?php echo $donnees['NomFilm'] ?></td>
 <td><?php echo $donnees['Synopsis']?></td>
-<td><center><?php echo $donnees['AnnéeSortie']?></center></td>
+<td><center><?php echo $donnees['AnneeSortie']?></center></td>
 <td><?php echo $donnees['NomGenre']?></td>
 <td><center><?php echo $donnees['NomPaysProd']?></center></td>
 <td><center><?php echo $donnees['NomLangueVO']?></center></td>

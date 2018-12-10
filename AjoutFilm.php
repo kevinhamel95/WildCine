@@ -31,14 +31,14 @@ include 'conect.php';
                 <input type="text" placeholder="Nom" name="nom" required><br><br>
 
                 <label><b>Synopsis</b></label><br>
-                <TEXTAREA type="text" placeholder="Synopsis" name="Synopsis"required></TEXTAREA><br><br>
+                <TEXTAREA type="text" placeholder="Synopsis" name="synopsis"required></TEXTAREA><br><br>
 				
 				<label><b>Année de Sortie</b></label><br>
-                <input type="number" placeholder="1900" name="AnnéeSortie" min="1895" required><br><br>
+                <input type="number" placeholder="1900" name="anneesortie" min="1895" required><br><br>
 
 </select><br><br>
 	<label for="Genre">Genre</label><br />
-    <select name="Genre" id="genre">
+    <select name="genre" id="genre">
  
 <?php
  
@@ -54,7 +54,7 @@ while($donnees2=mysqli_fetch_assoc($sql2))
 ?>
 </select><br><br>
 	<label for="LangueVO">Langue VO</label><br />
-    <select name="LangueVO" id="LangueVO">
+    <select name="languevo" id="Languevo">
  
 <?php
  
@@ -70,7 +70,7 @@ while($donnees2=mysqli_fetch_assoc($sql3))
 ?>
 </select><br><br>
 	<label for="PaysProd">Pays Production</label><br />
-    <select name="PaysProd" id="PaysProd">
+    <select name="paysprod" id="paysprod">
  
 <?php
  
@@ -84,4 +84,25 @@ while($donnees2=mysqli_fetch_assoc($sql2))
 }
  
 ?>
+</select><br><br>
+				<input type="submit" value="Valider">
 				
+					<?php
+				if(isset($_GET['erreur']))
+				{
+                    $err = $_GET['erreur'];
+                    if($err==1)
+					{
+                        echo "<p style='color:red'>erreur</p>";
+					}
+                }
+				if(isset($_GET['ok']))
+				{
+					$ok = $_GET['ok'];
+					if($ok==1)
+					{
+						echo "<p style='color:green'>L'adherant à bien été enregistrer</p>";
+					}
+				}
+					
+				?>
