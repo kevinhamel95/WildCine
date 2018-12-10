@@ -3,32 +3,43 @@ div#menu {
 	background-color:#01B3D5;
 	}
 	
-ul {
- padding:0;
+#menu ul {
  margin:0;
+ padding:0;
  list-style-type:none;
- }
-li {
- margin-left:2px;
- float:left; /*pour IE*/
- }
-ul li a {
- display:block;
- float:left;   
- width:100px;
- background-color:#FEFE01;
- color:black;
- text-decoration:none;
  text-align:center;
- padding:5px;
- border:2px solid;
- /*pour avoir un effet "outset" avec IE :*/
- border-color:#DCDCDC #696969 #696969 #DCDCDC;
  }
-ul li a:hover {
- background-color:#FE0101;
- border-color:#696969 #DCDCDC #DCDCDC #696969;
- } 
+#menu li {
+ float:left;
+ margin:auto;
+ padding:0;
+ background-color:#E5FE01;
+ }
+#menu li a {
+ display:block;
+ width:100px;
+ color:white;
+ text-decoration:none;
+ padding:5px;
+ }
+#menu li a:hover {
+ color:#FFD700;
+ }
+ 
+ #menu ul li ul {
+ display:none;
+ }
+ 
+ #menu ul li:hover ul {
+ display:block;
+ }
+#menu li:hover ul li {
+ float:none;
+ }
+ 
+ #menu li ul {
+ position:absolute;
+ }
  
 div#contenu {
 	background-color:#FEFA87;

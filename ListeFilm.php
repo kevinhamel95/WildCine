@@ -10,7 +10,14 @@ include 'conect.php';
  ?>
  
  <div id="menu">
- 
+ <ul>
+ <li><a href="AjoutFilm.php">Ajouter un film</a></li>
+ <li><a href="#">Rechercher</a>
+  <ul>
+     <li><a href="RechercheGenre.php">par Genre</a></li>
+      <li><a href="RechercheLangueVO.php">par Langue VO</a></li>
+      <li><a href="RecherchePaysProd.php">par Pays Production</a></li>
+    </ul></ul>
  <a href="Principal.php"><img src="WildCine.png" align=right></a><br>
  
  </div>
@@ -53,6 +60,7 @@ while($donnees = mysqli_fetch_array($requete))
 	<input type="hidden" name="id" value="<?php echo $donnees['CodeFilm']?>"/>
 	<input type="submit" name="valider" class="delete" value="Supprimer" />
 	</form>
+</td>
 <?php
 }
                 if(isset($_GET['erreur']))

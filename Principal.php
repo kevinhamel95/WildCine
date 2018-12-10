@@ -12,8 +12,14 @@ include 'conect.php';
  <div id="menu">
  <ul>
  <li><a href="ListeFilm.php">Liste des Film</a></li>
- <li><a href="#">Item 2</a></li>
- <li><a href="#">Item plus long</a></li>
+  <li><a href="#">Rechercher</a>
+  <ul>
+      <li><a href="RechercheGenre.php">par Genre</a></li>
+      <li><a href="RechercheLangueVO.php">par Langue VO</a></li>
+      <li><a href="RecherchePaysProd.php">par Pays Production</a></li>
+	  </li>
+    </ul>
+ <li><a href="AjoutFilm.php">Ajouter un Film</a></li>
   <img src="WildCine.png" align=right>
  </div>
  
