@@ -23,6 +23,9 @@ include 'conect.php';
  </div>
  
  <div id ="contenu">
+ <form action="rechercher.php" method="POST">
+<input type="text" placeholder="recherche" name="recherche" align=right required><br><br>
+</form>
  <table>
 <caption><h4>Liste films</h4></caption>
  <br><br>

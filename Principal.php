@@ -20,10 +20,12 @@ include 'conect.php';
 	  </li>
     </ul>
  <li><a href="AjoutFilm.php">Ajouter un Film</a></li>
-  <img src="WildCine.png" align=right>
+<img src="WildCine.png" align=right></a><br>
  </div>
  
  <div id ="contenu">
+<form action="rechercher.php" method="POST">
+<input type="text" placeholder="recherche" name="recherche" align=right required><br><br>
  <center>
  <br><h1>Bienvenue sur le site de WildCiné.</h1><br>
  <h3>voici une liste de 5 film au hasard :</h3> <br><br>

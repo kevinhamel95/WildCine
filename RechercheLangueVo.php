@@ -24,7 +24,9 @@ include 'conect.php';
  </div>
  
  <div id ="contenu">
- 
+ <form action="rechercher.php" method="POST">
+<input type="text" placeholder="recherche" name="recherche" align=right required><br><br>
+</form>
  	 <form action="ListeFilmLangueVO.php" method="POST">
                 <h1>Rechercher une Langue VO</h1>
 	<label for="LangueVO">Langue VO</label><br />

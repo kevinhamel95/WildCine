@@ -27,7 +27,9 @@ include 'conect.php';
  </div>
  
  <div id ="contenu">
- 
+ <form action="rechercher.php" method="POST">
+<input type="text" placeholder="recherche" name="recherche" align=right required><br><br>
+</form>
  	 <form action="ListeFilmPaysProd.php" method="POST">
                 <h1>Rechercher un Pays de production</h1>
 	<label for="paysprod">Pays de Production</label><br />

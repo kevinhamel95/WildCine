@@ -23,7 +23,9 @@ include 'conect.php';
  </div>
  
  <div id ="contenu">
-
+<form action="rechercher.php" method="POST">
+<input type="text" placeholder="recherche" name="recherche" align=right required><br><br>
+</form>
  <form action="AjouterFilm.php" method="POST">
                 <h1>Ajouter un Film</h1>
                 
@@ -101,7 +103,7 @@ while($donnees2=mysqli_fetch_assoc($sql2))
 					$ok = $_GET['ok'];
 					if($ok==1)
 					{
-						echo "<p style='color:green'>L'adherant à bien été enregistrer</p>";
+						echo "<p style='color:green'>Le film à bien été enregistrer</p>";
 					}
 				}
 					

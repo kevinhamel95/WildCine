@@ -1,11 +1,11 @@
 <?php
 include 'conect.php';
  header('Content-type: text/html; charset=UTF-8');
- $genre=$_POST['genre']
+ $recherche=$_POST['recherche'];
  ?>
 <html>
 <head>
-	<title>Liste Film genre <?php echo $genre ?> </title>
+	<title>resultat de <?php echo $recherche ?></title>
 	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 	<link rel="stylesheet" href="ChartreGraphique.css" media="screen" type="text/css" charset=UTF-8 />
 </head>
@@ -25,11 +25,8 @@ include 'conect.php';
  </div>
  
  <div id ="contenu">
- <form action="rechercher.php" method="POST">
-<input type="text" placeholder="recherche" name="recherche" align=right required><br><br>
-</form>
  <table>
-<caption><h4>Liste films</h4></caption>
+<caption><h4>Resultat de la recherche : <?php echo $recherche ?></h4></caption>
  <br><br>
             <thead>
             <tr class="titre_horizon_classique">
@@ -46,7 +43,8 @@ include 'conect.php';
             </thead>
 <tbody>
 <?php
-$sql="select `CodeFilm`,`NomFilm`,`Synopsis`,`AnneeSortie`,`NomGenre`,`NomLangueVO`, `NomPaysProd` from film, genre, languevo, paysprod where film.CodeGenre = genre.CodeGenre and film.CodePaysProd = paysprod.CodePaysProd and film.CodeLangueVO = languevo.CodeLangueVO and Genre.NomGenre='$genre'";
+$recherche .= "%";
+$sql="select `CodeFilm`,`NomFilm`,`Synopsis`,`AnneeSortie`,`NomGenre`,`NomLangueVO`, `NomPaysProd` from film, genre, languevo, paysprod where film.CodeGenre = genre.CodeGenre and film.CodePaysProd = paysprod.CodePaysProd and film.CodeLangueVO = languevo.CodeLangueVO and NomFilm like '$recherche'";
 $requete = mysqli_query($db,$sql);
 while($donnees = mysqli_fetch_array($requete)) 
 {
