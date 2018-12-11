@@ -5,7 +5,7 @@
 	<title> WildCiné </title>
 </head>
 <?php
-include 'conect.php';
+include 'conect.php'; // inclure le fichier de connexion à la base pour éviter de repeter le code
  header('Content-type: text/html; charset=UTF-8');
  ?>
  
@@ -30,7 +30,7 @@ include 'conect.php';
  <br><h1>Bienvenue sur le site de WildCiné.</h1><br>
  <h3>voici une liste de 5 film au hasard :</h3> <br><br>
  <?php
- $sql="select `NomFilm` from film order by rand() limit 0,5";
+ $sql="select `NomFilm` from film order by rand() limit 0,5"; // requete pour chosir 5 titre de film au hazard
   $requete = mysqli_query($db,$sql);
   while ($row = mysqli_fetch_array($requete))
   {

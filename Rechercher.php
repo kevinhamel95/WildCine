@@ -26,7 +26,7 @@ include 'conect.php';
  
  <div id ="contenu">
  <table>
-<caption><h4>Resultat de la recherche : <?php echo $recherche ?></h4></caption>
+<caption><h4>Resultat de la recherche : <?php echo $recherche?></h4></caption>
  <br><br>
             <thead>
             <tr class="titre_horizon_classique">
@@ -44,7 +44,7 @@ include 'conect.php';
 <tbody>
 <?php
 $recherche .= "%";
-$sql="select `CodeFilm`,`NomFilm`,`Synopsis`,`AnneeSortie`,`NomGenre`,`NomLangueVO`, `NomPaysProd` from film, genre, languevo, paysprod where film.CodeGenre = genre.CodeGenre and film.CodePaysProd = paysprod.CodePaysProd and film.CodeLangueVO = languevo.CodeLangueVO and NomFilm like '$recherche'";
+$sql="select `CodeFilm`,`NomFilm`,`Synopsis`,`AnneeSortie`,`NomGenre`,`NomLangueVO`, `NomPaysProd` from film, genre, languevo, paysprod where film.CodeGenre = genre.CodeGenre and film.CodePaysProd = paysprod.CodePaysProd and film.CodeLangueVO = languevo.CodeLangueVO and NomFilm like '$recherche'"; // requete avec like qui permet de rechercher sur la base tout les nom de film qui commanceron par la recherche taper daas la barre
 $requete = mysqli_query($db,$sql);
 while($donnees = mysqli_fetch_array($requete)) 
 {
